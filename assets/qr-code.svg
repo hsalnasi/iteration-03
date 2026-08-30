@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <rect width="240" height="240" fill="#ffffff" rx="6" />
+  
+  <!-- Outer Finder 1 (Top Left) -->
+  <rect x="20" y="20" width="56" height="56" fill="#000000" rx="4" />
+  <rect x="28" y="28" width="40" height="40" fill="#ffffff" rx="2" />
+  <rect x="36" y="36" width="24" height="24" fill="#000000" rx="1" />
+
+  <!-- Outer Finder 2 (Top Right) -->
+  <rect x="164" y="20" width="56" height="56" fill="#000000" rx="4" />
+  <rect x="172" y="28" width="40" height="40" fill="#ffffff" rx="2" />
+  <rect x="180" y="36" width="24" height="24" fill="#000000" rx="1" />
+
+  <!-- Outer Finder 3 (Bottom Left) -->
+  <rect x="20" y="164" width="56" height="56" fill="#000000" rx="4" />
+  <rect x="28" y="172" width="40" height="40" fill="#ffffff" rx="2" />
+  <rect x="36" y="180" width="24" height="24" fill="#000000" rx="1" />
+
+  <!-- Alignment pattern -->
+  <rect x="168" y="168" width="28" height="28" fill="#000000" rx="2" />
+  <rect x="174" y="174" width="16" height="16" fill="#ffffff" rx="1" />
+  <rect x="180" y="180" width="4" height="4" fill="#000000" />
+
+  <!-- QR Data Modules Matrix -->
+  <g fill="#000000">
+    <!-- Timing tracks -->
+    <rect x="84" y="44" width="8" height="8" />
+    <rect x="100" y="44" width="8" height="8" />
+    <rect x="116" y="44" width="8" height="8" />
+    <rect x="132" y="44" width="8" height="8" />
+    <rect x="148" y="44" width="8" height="8" />
+    
+    <rect x="44" y="84" width="8" height="8" />
+    <rect x="44" y="100" width="8" height="8" />
+    <rect x="44" y="116" width="8" height="8" />
+    <rect x="44" y="132" width="8" height="8" />
+    <rect x="44" y="148" width="8" height="8" />
+
+    <!-- Center & Random QR blocks -->
+    <rect x="84" y="84" width="16" height="8" />
+    <rect x="108" y="84" width="8" height="16" />
+    <rect x="124" y="84" width="24" height="8" />
+    <rect x="156" y="84" width="8" height="8" />
+    <rect x="180" y="84" width="16" height="8" />
+
+    <rect x="84" y="100" width="8" height="24" />
+    <rect x="100" y="108" width="16" height="8" />
+    <rect x="124" y="100" width="8" height="8" />
+    <rect x="140" y="108" width="16" height="16" />
+    <rect x="164" y="100" width="8" height="8" />
+    <rect x="188" y="100" width="16" height="16" />
+
+    <rect x="20" y="84" width="8" height="8" />
+    <rect x="20" y="100" width="16" height="8" />
+    <rect x="20" y="116" width="8" height="16" />
+    <rect x="20" y="140" width="16" height="8" />
+
+    <rect x="84" y="132" width="24" height="8" />
+    <rect x="116" y="124" width="8" height="16" />
+    <rect x="132" y="132" width="16" height="8" />
+    <rect x="156" y="124" width="8" height="16" />
+    <rect x="172" y="132" width="16" height="8" />
+    <rect x="196" y="124" width="8" height="16" />
+
+    <rect x="84" y="148" width="8" height="16" />
+    <rect x="100" y="156" width="16" height="8" />
+    <rect x="124" y="148" width="8" height="24" />
+    <rect x="140" y="156" width="16" height="8" />
+    <rect x="164" y="148" width="8" height="16" />
+    <rect x="180" y="156" width="24" height="8" />
+
+    <rect x="84" y="180" width="16" height="8" />
+    <rect x="108" y="172" width="8" height="16" />
+    <rect x="124" y="188" width="16" height="8" />
+    <rect x="148" y="180" width="8" height="16" />
+    <rect x="204" y="180" width="16" height="16" />
+
+    <rect x="84" y="204" width="24" height="16" />
+    <rect x="116" y="204" width="8" height="8" />
+    <rect x="132" y="204" width="24" height="8" />
+    <rect x="164" y="204" width="8" height="16" />
+    <rect x="180" y="204" width="16" height="8" />
+    <rect x="204" y="204" width="16" height="16" />
+  </g>
+
+  <!-- Center Badge / Sparkle Motif -->
+  <rect x="104" y="104" width="32" height="32" rx="4" fill="#000000" stroke="#ffffff" stroke-width="2" />
+  <text x="120" y="125" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#c4a7e7">✦</text>
+</svg>

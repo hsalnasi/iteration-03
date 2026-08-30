@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ieeeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a121e" />
+      <stop offset="100%" stop-color="#04070d" />
+    </linearGradient>
+    <linearGradient id="ieeeBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#006699" />
+      <stop offset="100%" stop-color="#004466" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#ieeeBg)" stroke="#1a2736" stroke-width="1.5" />
+  
+  <!-- IEEE Official Student Branch Header -->
+  <g transform="translate(30, 24)">
+    <rect x="0" y="0" width="540" height="50" rx="6" fill="#0d1929" stroke="#1d3557" />
+    
+    <!-- IEEE Diamond Emblem Symbol -->
+    <g transform="translate(24, 25)">
+      <polygon points="0,-16 16,0 0,16 -16,0" fill="url(#ieeeBlue)" stroke="#38bdf8" stroke-width="1.2" />
+      <path d="M -8 0 L 8 0 M 0 -8 L 0 8" stroke="#fff" stroke-width="1.5" />
+    </g>
+    
+    <text x="56" y="26" font-family="'Inter', sans-serif" font-size="14" font-weight="bold" fill="#ffffff">
+      IEEE Student Branch
+    </text>
+    <text x="56" y="40" font-family="'Inter', sans-serif" font-size="10" fill="#94a3b8">
+      Dar Al-Hekma University · Vice President
+    </text>
+
+    <!-- Branch Status Badge -->
+    <rect x="420" y="14" width="100" height="22" rx="11" fill="#1e293b" />
+    <circle cx="432" cy="25" r="3.5" fill="#38bdf8" />
+    <text x="442" y="28" font-family="'Inter', sans-serif" font-size="9" fill="#e2e8f0">Active Branch</text>
+  </g>
+
+  <!-- Left: Collaborative Workshop & Student Leadership Session -->
+  <g transform="translate(30, 90)">
+    <rect x="0" y="0" width="310" height="280" rx="6" fill="#0c1624" stroke="#1c2c40" />
+    <text x="16" y="26" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#f8fafc">Technical Community &amp; Workshops</text>
+    <text x="16" y="42" font-family="'Inter', sans-serif" font-size="9" fill="#64748b">Student branch problem-solving circles</text>
+
+    <!-- Workshop whiteboard scene illustration -->
+    <rect x="16" y="58" width="278" height="130" rx="4" fill="#080e18" stroke="#1b2a3d" />
+    <!-- Whiteboard lines -->
+    <line x1="30" y1="80" x2="160" y2="80" stroke="#38bdf8" stroke-width="1.5" />
+    <line x1="30" y1="95" x2="120" y2="95" stroke="#94a3b8" stroke-width="1" />
+    <!-- Graph / Tree Diagram on Board -->
+    <circle cx="210" cy="85" r="8" fill="#1e3a5f" stroke="#38bdf8" />
+    <circle cx="190" cy="115" r="7" fill="#1e3a5f" stroke="#38bdf8" />
+    <circle cx="230" cy="115" r="7" fill="#1e3a5f" stroke="#38bdf8" />
+    <line x1="205" y1="92" x2="195" y2="108" stroke="#38bdf8" stroke-width="1" />
+    <line x1="215" y1="92" x2="225" y2="108" stroke="#38bdf8" stroke-width="1" />
+
+    <text x="30" y="145" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#a78bfa">
+      Topic: Graph Traversal &amp; BFS/DFS
+    </text>
+    <text x="30" y="160" font-family="'Inter', sans-serif" font-size="8.5" fill="#64748b">
+      Weekly peer mentoring for CS undergrads
+    </text>
+
+    <!-- Leadership statement -->
+    <rect x="16" y="200" width="278" height="66" rx="4" fill="#0f1f33" stroke="#254164" />
+    <text x="26" y="222" font-family="'Inter', sans-serif" font-size="9.5" font-weight="600" fill="#e2e8f0">Leadership Mission:</text>
+    <text x="26" y="238" font-family="'Inter', sans-serif" font-size="8.5" fill="#94a3b8">"Not studying in isolation, but building</text>
+    <text x="26" y="252" font-family="'Inter', sans-serif" font-size="8.5" fill="#94a3b8">a supportive culture of builders together."</text>
+  </g>
+
+  <!-- Right: IEEE Xtreme Preparation Card -->
+  <g transform="translate(360, 90)">
+    <rect x="0" y="0" width="210" height="280" rx="6" fill="#0c1624" stroke="#1c2c40" />
+    
+    <rect x="12" y="12" width="186" height="30" rx="3" fill="#006699" />
+    <text x="105" y="31" text-anchor="middle" font-family="'Inter', sans-serif" font-size="11" font-weight="bold" fill="#fff">
+      IEEE Xtreme 2026
+    </text>
+
+    <text x="16" y="66" font-family="'Inter', sans-serif" font-size="9.5" font-weight="600" fill="#cbd5e1">Competition Prep:</text>
+    <text x="16" y="82" font-family="'Inter', sans-serif" font-size="8.5" fill="#888">24-hour virtual competitive</text>
+    <text x="16" y="96" font-family="'Inter', sans-serif" font-size="8.5" fill="#888">programming challenge.</text>
+
+    <!-- Checklist -->
+    <g transform="translate(16, 114)">
+      <rect x="0" y="0" width="178" height="26" rx="3" fill="#09121d" />
+      <text x="8" y="17" font-family="'JetBrains Mono', monospace" font-size="8" fill="#10b981">✓ DSA Foundations</text>
+
+      <rect x="0" y="32" width="178" height="26" rx="3" fill="#09121d" />
+      <text x="8" y="49" font-family="'JetBrains Mono', monospace" font-size="8" fill="#38bdf8">▶ Striver A2Z Track</text>
+
+      <rect x="0" y="64" width="178" height="26" rx="3" fill="#09121d" />
+      <text x="8" y="81" font-family="'JetBrains Mono', monospace" font-size="8" fill="#eab308">⏳ Mock Contests</text>
+    </g>
+
+    <!-- Membership subtle box -->
+    <rect x="12" y="222" width="186" height="44" rx="4" fill="#080e18" stroke="#182637" />
+    <text x="105" y="240" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#64748b">IEEE MEMBER ID</text>
+    <text x="105" y="254" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#94a3b8">[Active Verified]</text>
+  </g>
+</svg>

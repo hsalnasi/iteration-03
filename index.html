@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haifa Al-Nasi</title>
+  <meta name="description" content="Haifa Al-Nasi, Computer Science student at Dar Al-Hekma University." />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
+
+  <!-- Typography: EB Garamond (Editorial Serif), Inter (Clean UI Sans), JetBrains Mono (Tech/Log Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-theme">
+  <!-- Glow & Background Canvas for subtle atmosphere -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top Fixed Floating Navigation -->
+  <header class="top-nav">
+    <a href="#" class="brand-link">
+      <span class="sparkle-icon">✦</span>
+      <span class="brand-name">Haifa Al-Nasi</span>
+      <span class="leap-badge">CS student</span>
+    </a>
+    
+    <nav class="nav-links">
+      <a href="#about" class="nav-item">about</a>
+      <a href="#trajectory" class="nav-item">trajectory</a>
+      <a href="#experience" class="nav-item">work</a>
+      <a href="#learning" class="nav-item">learning</a>
+      <a href="#log" class="nav-item">log</a>
+      <button id="qr-btn" class="nav-btn" title="Quick Scan QR Code">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>connect</span>
+      </button>
+      <button id="audio-toggle" class="audio-btn" aria-label="Toggle ambient soundscape" title="Toggle calm ambient sound">
+        <svg id="audio-icon-muted" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
+        <svg id="audio-icon-playing" class="hidden" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="content-wrapper">
+    <!-- Hero / Introduction Section -->
+    <section id="about" class="hero-section">
+      <div class="hero-container">
+        <!-- Profile Column -->
+        <div class="hero-portrait-col">
+          <div class="hero-title-block">
+            <h1 class="person-name">Haifa Al-Nasi</h1>
+            <p class="role-subtitle">
+              Computer Science Student<br />
+              <span class="institution">Dar Al-Hekma University</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Statement & Exploration Column -->
+        <div class="hero-bio-col">
+          <!-- Social Icons Bar -->
+          <div class="social-bar">
+            <a href="https://github.com/hsalnasi" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              <span>github</span>
+            </a>
+            <a href="https://www.linkedin.com/in/haifa-al-nasi-997ab2216/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <span>linkedin</span>
+            </a>
+            <a href="mailto:hsalnasi@dah.edu.sa" class="social-link" title="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+              <span>email</span>
+            </a>
+            <button class="social-link qr-trigger-btn" title="QR Code for Mobile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              <span>qr card</span>
+            </button>
+          </div>
+
+          <!-- Editorial Core Statement -->
+          <div class="bio-text-group">
+            <p class="lead-statement">
+              "Hi, I’m Haifa. I’m a CS student who loves following a question until it becomes something I can try."
+            </p>
+            <p class="secondary-statement">
+              I’m curious about software, AI, and electronics. I want to keep learning, trying, failing, and getting better instead of settling where I am.
+            </p>
+          </div>
+
+          <!-- Exploration Spectrum (Honest Exploration Tags) -->
+          <div class="exploration-bar">
+            <span class="exploration-label">Currently exploring:</span>
+            <div class="exploration-tags">
+              <span class="tag">Machine Learning</span>
+              <span class="tag-sep">·</span>
+              <span class="tag">Software Engineering</span>
+              <span class="tag-sep">·</span>
+              <span class="tag">Web Development</span>
+              <span class="tag-sep">·</span>
+              <span class="tag">AI &amp; Automation</span>
+              <span class="tag-sep">·</span>
+              <span class="tag">Competitive Programming</span>
+              <span class="tag-sep">·</span>
+              <span class="tag">Electronics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Marquee Stream (jia.build inspired photo/evidence ribbon) -->
+    <section class="marquee-section" aria-label="Visual Highlights">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <!-- Item 1: AI Hackathon -->
+          <div class="marquee-item" data-evidence="hackathon-photo">
+            <div class="item-visual-wrap">
+              <img src="media/GHZ26277.jpg.jpeg" alt="Hack the Future hackathon team" class="marquee-img" />
+              <div class="item-badge">Hack the Future</div>
+            </div>
+            <span class="item-caption">building with a team at a hackathon</span>
+          </div>
+
+          <!-- Item 2: Twaiqathon Fazaa -->
+          <div class="marquee-item" data-evidence="twaiqathon-fazaa">
+            <div class="item-visual-wrap">
+              <video src="media/student.mp4" class="marquee-img" muted autoplay loop playsinline aria-label="Fazaa project demo"></video>
+              <div class="item-badge">Twaiqathon · Fazaa</div>
+            </div>
+            <span class="item-caption">student community platform prototype</span>
+          </div>
+
+          <!-- Item 4: Arduino Circuit -->
+          <div class="marquee-item" data-evidence="arduino-circuit">
+            <div class="item-visual-wrap">
+              <img src="media/WhatsApp Image 2026-08-30 at 9.27.45 PM.jpeg" alt="Arduino LED circuit" class="marquee-img" />
+              <div class="item-badge">Arduino / Electronics</div>
+            </div>
+            <span class="item-caption">first beginner LED breadboard</span>
+          </div>
+
+          <!-- Item 5: IEEE Student Branch -->
+          <div class="marquee-item" data-evidence="ieee-community">
+            <div class="item-visual-wrap">
+              <img src="media/1760896823368.jpg" alt="DAH IEEE membership badge" class="marquee-img" />
+              <div class="item-badge">IEEE Member</div>
+            </div>
+            <span class="item-caption">student tech community leadership</span>
+          </div>
+
+        </div>
+
+        <!-- Duplicated track for seamless infinite scroll loop -->
+        <div class="marquee-content" aria-hidden="true">
+          <div class="marquee-item" data-evidence="hackathon-photo">
+            <div class="item-visual-wrap">
+              <img src="media/GHZ26277.jpg.jpeg" alt="Hack the Future hackathon team" class="marquee-img" />
+              <div class="item-badge">Hack the Future</div>
+            </div>
+            <span class="item-caption">building under midterm pressure</span>
+          </div>
+
+          <div class="marquee-item" data-evidence="twaiqathon-fazaa">
+            <div class="item-visual-wrap">
+              <video src="media/student.mp4" class="marquee-img" muted autoplay loop playsinline aria-label="Fazaa project demo"></video>
+              <div class="item-badge">Twaiqathon · Fazaa</div>
+            </div>
+            <span class="item-caption">student community platform prototype</span>
+          </div>
+
+          <div class="marquee-item" data-evidence="arduino-circuit">
+            <div class="item-visual-wrap">
+              <img src="media/WhatsApp Image 2026-08-30 at 9.27.45 PM.jpeg" alt="Arduino LED circuit" class="marquee-img" />
+              <div class="item-badge">Arduino / Electronics</div>
+            </div>
+            <span class="item-caption">first beginner LED breadboard</span>
+          </div>
+
+          <div class="marquee-item" data-evidence="ieee-community">
+            <div class="item-visual-wrap">
+              <img src="media/1760896823368.jpg" alt="DAH IEEE membership badge" class="marquee-img" />
+              <div class="item-badge">IEEE Member</div>
+            </div>
+            <span class="item-caption">student tech community leadership</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- The Trajectory (The honest story arc) -->
+    <section id="trajectory" class="section-container trajectory-section">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">my approach</h2>
+        <span class="section-tag">curiosity, practice &amp; momentum</span>
+      </div>
+
+      <div class="trajectory-grid">
+        <div class="trajectory-card">
+          <div class="card-timeline">THEN</div>
+          <h3 class="card-heading">Curious exploration</h3>
+          <p class="card-desc">
+            I’m curious about ML, web, automation, and hardware, especially where they overlap.
+          </p>
+        </div>
+
+        <div class="trajectory-card card-reality">
+          <div class="card-timeline">HOW I LEARN</div>
+          <h3 class="card-heading">Experiment, reflect, iterate</h3>
+          <p class="card-desc">
+            I learn best by trying things hands-on, asking questions, and using each experiment to shape the next one.
+          </p>
+        </div>
+
+        <div class="trajectory-card card-now">
+          <div class="card-timeline">NOW</div>
+          <h3 class="card-heading">Turning learning into projects</h3>
+          <p class="card-desc">
+            I’m trying to spend more time making things and learning from the messy parts.
+          </p>
+        </div>
+
+        <div class="trajectory-card">
+          <div class="card-timeline">NEXT</div>
+          <h3 class="card-heading">Deepening fundamentals</h3>
+          <p class="card-desc">
+            More projects, deeper fundamentals, and eventually a bridge between ML and hardware.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience / Things I've Actually Done -->
+    <section id="experience" class="section-container experience-section">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">things I’ve worked on</h2>
+        <span class="section-tag">projects, prototypes &amp; community</span>
+      </div>
+
+      <div class="experience-list">
+        <!-- 1. AI Hackathon -->
+        <article class="exp-card">
+          <div class="exp-meta">
+            <span class="exp-year">2026</span>
+            <span class="exp-type">Hackathon Prototype</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-main">
+              <h3 class="exp-title">Hack the Future Hackathon</h3>
+              <p class="exp-summary">
+                Participated in the Hack the Future hackathon, held as part of the International Conference on AI Innovations and Industry. It was a hands-on opportunity to build, learn, and collaborate under real hackathon constraints.
+              </p>
+              <div class="exp-evidence-triggers">
+                <button class="evidence-btn" data-modal="hackathon-photo">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span>view hackathon photo</span>
+                </button>
+                <button class="evidence-btn" data-modal="hackathon-cert">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  <span>view certificate</span>
+                </button>
+              </div>
+            </div>
+            <div class="exp-aside-box" data-modal="hackathon-photo">
+              <img src="media/GHZ26277.jpg.jpeg" alt="Hack the Future hackathon team" class="exp-thumb" />
+              <span class="thumb-hint">tap to enlarge</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Twaiqathon: Fazaa -->
+        <article class="exp-card">
+          <div class="exp-meta">
+            <span class="exp-year">2025 – 2026</span>
+            <span class="exp-type">Twaiqathon Project</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-main">
+              <h3 class="exp-title">Twaiqathon: Fazaa (فزعة)</h3>
+              <p class="exp-summary">
+                At Twaiqathon, we built <strong>Fazaa</strong>, a student-to-student platform inspired by faza’a, showing up when someone needs help. It matches students with mentors whose approach suits how they learn.
+              </p>
+              <p class="exp-subnote">
+                <em>The idea:</em> make asking for help feel easier and more personal.
+              </p>
+              <div class="exp-evidence-triggers">
+                <button class="evidence-btn" data-modal="twaiqathon-fazaa">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span>watch Fazaa demo</span>
+                </button>
+              </div>
+            </div>
+            <div class="exp-aside-box">
+              <video src="media/student.mp4" controls preload="metadata" class="exp-thumb" aria-label="Fazaa platform demo"></video>
+              <span class="thumb-hint">Fazaa demo</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Heroz: Part-time Software Work -->
+        <article class="exp-card">
+          <div class="exp-meta">
+            <span class="exp-year">Part-time</span>
+            <span class="exp-type">Software Support</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-main">
+              <div class="title-with-badge">
+                <h3 class="exp-title">Heroz: Software Development Tasks</h3>
+                <span class="pill-badge">production codebase</span>
+              </div>
+              <p class="exp-summary">
+                My first look at real software outside tutorials. I helped with bug fixes, deep linking in Flutter, and small development tasks.
+              </p>
+              <p class="exp-subnote">
+                <em>What it gave me:</em> a chance to learn how real codebases feel.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Heroz: AI & Automation Internship -->
+        <article class="exp-card">
+          <div class="exp-meta">
+            <span class="exp-year">Internship</span>
+            <span class="exp-type">AI &amp; Workflows</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-main">
+              <div class="title-with-badge">
+                <h3 class="exp-title">Heroz: AI &amp; Automation Internship</h3>
+                <span class="pill-badge automation-badge">n8n workflows</span>
+              </div>
+              <p class="exp-summary">
+                Learned <strong>n8n</strong> by trying out automation workflows and seeing what worked.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Completed Personal Project: Anime Analysis -->
+        <article class="exp-card featured-project-card">
+          <div class="exp-meta">
+            <span class="exp-year">Project</span>
+            <span class="exp-type highlight-type">Main Completed Project</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-main">
+              <div class="title-with-badge">
+                <h3 class="exp-title">Anime Dataset Analysis &amp; EDA</h3>
+                <span class="pill-badge project-badge">100% finished</span>
+              </div>
+              <p class="exp-summary">
+                My completed personal project: cleaning, exploring, and visualizing a large anime dataset.
+              </p>
+              <p class="exp-subnote">
+                <strong>What I learned:</strong> thoughtful data cleaning and clear questions are just as important as the final charts.
+              </p>
+              <div class="exp-evidence-triggers">
+                <button class="evidence-btn" data-modal="anime-analysis">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+                  <span>view analysis charts</span>
+                </button>
+              </div>
+            </div>
+            <div class="exp-aside-box" data-modal="anime-analysis">
+              <img src="assets/anime-analysis.svg" alt="Anime Analysis Visuals" class="exp-thumb" />
+              <span class="thumb-hint">tap to enlarge</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. IEEE Student Branch Leadership -->
+        <article class="exp-card">
+          <div class="exp-meta">
+            <span class="exp-year">Leadership</span>
+            <span class="exp-type">Community</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-main">
+              <h3 class="exp-title">Vice President, IEEE Student Branch</h3>
+              <p class="exp-org">Dar Al-Hekma University · Active Member</p>
+              <p class="exp-summary">
+                Part of the student tech community at Dar Al-Hekma, with workshops, shared learning, and IEEE Xtreme ahead.
+              </p>
+              <div class="exp-evidence-triggers">
+                <button class="evidence-btn" data-modal="ieee-community">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                  <span>view IEEE branch snapshot</span>
+                </button>
+              </div>
+            </div>
+            <div class="exp-aside-box" data-modal="ieee-community">
+              <img src="media/1760896823368.jpg" alt="DAH IEEE membership badge" class="exp-thumb" />
+              <span class="thumb-hint">tap to enlarge</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Pearson Student Ambassador -->
+        <article class="exp-card compact-exp-card">
+          <div class="exp-meta">
+            <span class="exp-year">Role</span>
+            <span class="exp-type">Ambassador</span>
+          </div>
+          <div class="exp-body">
+            <div class="exp-main">
+              <h3 class="exp-title">Pearson Student Ambassador</h3>
+              <p class="exp-summary">
+                Participated in ambassador sessions, provided feedback on student engagement strategies, and practiced voicing ideas and recommendations to improve university-corporate student outreach.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Currently Learning / Exploring ("What I'm doing NOW") -->
+    <section id="learning" class="section-container learning-section">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">currently learning &amp; exploring</h2>
+        <span class="section-tag">what I’m exploring right now</span>
+      </div>
+
+      <div class="learning-grid">
+        <!-- 1. Machine Learning -->
+        <div class="learning-card">
+          <div class="learning-header">
+            <span class="learning-icon">✦</span>
+            <h3 class="learning-title">Machine Learning</h3>
+            <span class="status-pill in-progress">active coursework</span>
+          </div>
+          <p class="learning-desc">
+            Learning the basics, then trying them on real datasets with <code>scikit-learn</code> and <code>TensorFlow</code>.
+          </p>
+          <div class="learning-footer">
+            <span class="goal-tag">Goal: Ship 3 standalone end-to-end ML projects</span>
+          </div>
+        </div>
+
+        <!-- 2. Web Development -->
+        <div class="learning-card">
+          <div class="learning-header">
+            <span class="learning-icon">✦</span>
+            <h3 class="learning-title">Web Development</h3>
+            <span class="status-pill in-progress">foundations</span>
+          </div>
+          <p class="learning-desc">
+            Learning HTML, CSS, and JavaScript, then slowly working toward fuller projects.
+          </p>
+          <div class="learning-footer">
+            <span class="goal-tag">Goal: Clean full-stack apps without bloat</span>
+          </div>
+        </div>
+
+        <!-- 3. Competitive Programming -->
+        <div class="learning-card">
+          <div class="learning-header">
+            <span class="learning-icon">✦</span>
+            <h3 class="learning-title">Competitive Programming</h3>
+            <span class="status-pill in-progress">DSA roadmap</span>
+          </div>
+          <p class="learning-desc">
+            Working through DSA patterns and getting ready to give <strong>IEEE Xtreme</strong> a real try.
+          </p>
+          <div class="learning-footer">
+            <span class="goal-tag">Goal: Solid algorithmic baseline for IEEE Xtreme</span>
+          </div>
+        </div>
+
+        <!-- 4. Electronics & Arduino -->
+        <div class="learning-card">
+          <div class="learning-header">
+            <span class="learning-icon">✦</span>
+            <h3 class="learning-title">Electronics &amp; Arduino</h3>
+            <span class="status-pill beginner">day 1 basics</span>
+          </div>
+          <p class="learning-desc">
+            Starting with simple circuits and Arduino, with ML and hardware somewhere in the future.
+          </p>
+          <div class="circuit-inline-trigger" data-modal="arduino-circuit">
+            <img src="media/WhatsApp Image 2026-08-30 at 9.27.45 PM.jpeg" alt="First LED circuit" class="circuit-inline-thumb" />
+            <span class="inline-hint">view first LED circuit photo</span>
+          </div>
+        </div>
+
+        <!-- 5. Mandarin & Broad Interests -->
+        <div class="learning-card compact-card">
+          <div class="learning-header">
+            <span class="learning-icon">✦</span>
+            <h3 class="learning-title">Mandarin (中文)</h3>
+            <span class="status-pill casual">hobby</span>
+          </div>
+          <p class="learning-desc">
+            Exploring Mandarin alongside my technical track, just because I enjoy learning new things.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes & Reflections (jia.build inspired tilted appreciation/reflection cards) -->
+    <section class="section-container reflections-section">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">ideas I keep close</h2>
+        <span class="section-tag">a few things that guide me</span>
+      </div>
+
+      <div class="cards-canvas">
+        <div class="note-card note-rot-1">
+          <p class="note-quote">“Stay curious enough to try the thing you do not know how to do yet.”</p>
+          <div class="note-meta">
+            <span class="note-author">a reminder to myself</span>
+            <span class="note-date">[learning note]</span>
+          </div>
+        </div>
+
+        <div class="note-card note-rot-2">
+          <p class="note-quote">“The best ideas get better when they are shaped with other people.”</p>
+          <div class="note-meta">
+            <span class="note-author">from building Fazaa</span>
+            <span class="note-date">[Twaiqathon reflection]</span>
+          </div>
+        </div>
+
+        <div class="note-card note-rot-3">
+          <p class="note-quote">“There is always more to learn. That is what makes technology exciting.”</p>
+          <div class="note-meta">
+            <span class="note-author">a perspective I value</span>
+            <span class="note-date">[ongoing]</span>
+          </div>
+        </div>
+
+        <div class="note-card note-rot-4">
+          <p class="note-quote">“Community turns an individual interest into something much bigger.”</p>
+          <div class="note-meta">
+            <span class="note-author">why student communities matter</span>
+            <span class="note-date">[community note]</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Building Log / Daily Thoughts (jia.build style scrollable monospace terminal box) -->
+    <section id="log" class="section-container log-section">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">timeline &amp; little updates</h2>
+        <span class="section-tag">a few moments along the way</span>
+      </div>
+
+      <div class="log-box">
+        <div class="log-box-header">
+          <div class="log-box-title">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="log-label">current_building_log.txt</span>
+          </div>
+          <span class="log-status">live updates</span>
+        </div>
+
+        <div class="log-entries-scroll" id="log-container">
+          <div class="log-entry">
+            <div class="log-timestamp">Oct 2026 · LEAP</div>
+            <p class="log-text">Meeting awesome people and discovering a new world.</p>
+          </div>
+
+          <div class="log-entry">
+            <div class="log-timestamp">Mar 2026 · Twaiqathon</div>
+            <p class="log-text">The most fun hackathon I have ever been in.</p>
+          </div>
+
+          <div class="log-entry">
+            <div class="log-timestamp">Jan 2026 · Electronics</div>
+            <p class="log-text">Finally opening the door to electronics, hoping to merge it with what I’m learning in ML.</p>
+          </div>
+
+          <div class="log-entry">
+            <div class="log-timestamp">Apr 2026 · Hack the Future</div>
+            <p class="log-text">Intense, but a really fruitful experience where I got to test my limits and learn on the go.</p>
+          </div>
+
+          <div class="log-entry">
+            <div class="log-timestamp">Oct 2025 · Heroz CodeLab internship</div>
+            <p class="log-text">I applied before I could overthink my tech stack, got accepted, and jumped in eager to learn as I went.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Ask a Question / Drop a Note (jia.build inspired) -->
+    <section class="section-container question-section" id="questions">
+      <div class="interactive-card">
+        <div class="question-header">
+          <h3 class="card-title">say hello or ask a question</h3>
+          <span class="response-time">I’d love to connect</span>
+        </div>
+        <p class="question-sub">
+          If we met, let me know what we talked about so I can follow up.
+        </p>
+
+        <form id="contact-form" class="note-form">
+          <div class="form-inputs">
+            <input type="text" id="visitor-name" placeholder="Your name or organization (optional)" class="clean-input" />
+            <input type="text" id="visitor-contact" placeholder="Email / LinkedIn / Twitter (optional for reply)" class="clean-input" />
+          </div>
+          <div class="form-textarea-row">
+            <textarea id="visitor-message" placeholder="Message, advice, project idea, or just saying hi..." rows="3" class="clean-textarea" required></textarea>
+            <button type="submit" class="submit-note-btn">
+              <span>send note</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </div>
+        </form>
+
+        <div id="form-success-msg" class="success-banner hidden">
+          ✓ Thank you for reaching out! Looking forward to connecting.
+        </div>
+
+        <div class="submitted-notes-drawer" id="notes-drawer">
+          <div class="drawer-header">
+            <span>Recent messages &amp; notes</span>
+          </div>
+          <div class="drawer-list" id="drawer-list">
+            <div class="drawer-item">
+              <span class="drawer-author">A future conversation</span>
+              <p class="drawer-text">"Let’s keep in touch and trade ideas."</p>
+              <span class="drawer-time">just now</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect / QR Code Footer -->
+    <footer class="footer-section">
+      <div class="footer-inner">
+        <div class="footer-qr-card">
+          <div class="qr-code-graphic" id="footer-qr-graphic">
+            <img id="footer-qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&amp;data=https%3A%2F%2Fgithub.com%2Fhsalnasi" alt="Scan to open Haifa Al-Nasi's profile" class="qr-img" />
+          </div>
+          <div class="qr-text-side">
+            <div class="footer-title">Let’s connect</div>
+            <p class="footer-desc">
+              Scan this QR code from your phone or save this page to your home screen.
+            </p>
+            <div class="footer-links">
+              <a href="https://github.com/hsalnasi" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+              <span class="footer-dot">·</span>
+              <a href="https://www.linkedin.com/in/haifa-al-nasi-997ab2216/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+              <span class="footer-dot">·</span>
+              <a href="mailto:hsalnasi@dah.edu.sa" class="footer-link">Email</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom-line">
+          <span>Dar Al-Hekma University · Computer Science</span>
+          <span>A small hello from Haifa</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Evidence / Lightbox Modal -->
+  <div id="lightbox-modal" class="modal-overlay hidden" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop"></div>
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal-content-box">
+        <div class="modal-image-wrap">
+          <img id="modal-img" src="" alt="Evidence photo" class="modal-image" />
+          <video id="modal-video" class="modal-image hidden" controls playsinline></video>
+          <iframe id="modal-pdf" class="modal-image hidden" title="Certificate preview"></iframe>
+        </div>
+        <div class="modal-caption-area">
+          <h4 id="modal-title" class="modal-caption-title">Item Title</h4>
+          <p id="modal-desc" class="modal-caption-desc">Item Description</p>
+          <div class="modal-meta-tag" id="modal-meta">Evidence Verified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QR Pass Quick Connect Modal -->
+  <div id="qr-modal" class="modal-overlay hidden" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop"></div>
+    <div class="modal-container qr-modal-container">
+      <button class="modal-close-btn" id="qr-modal-close" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="qr-pass-card">
+        <div class="pass-header">
+          <span class="pass-event">HAIFA AL-NASI</span>
+          <span class="pass-id">PROFILE PASS</span>
+        </div>
+        <div class="pass-body">
+          <img id="modal-qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=360x360&amp;data=https%3A%2F%2Fgithub.com%2Fhsalnasi" alt="Scan to open Haifa Al-Nasi's profile" class="pass-qr-image" />
+          <div class="pass-info">
+            <h3 class="pass-name">Haifa Al-Nasi</h3>
+            <p class="pass-role">Computer Science Student<br />Dar Al-Hekma University</p>
+          </div>
+        </div>
+        <div class="pass-footer">
+          <button id="copy-link-btn" class="copy-url-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span id="copy-btn-text">copy profile link</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

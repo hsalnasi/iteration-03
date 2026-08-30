@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <radialGradient id="avatarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2a2a2a" />
+      <stop offset="100%" stop-color="#0d0d0d" />
+    </radialGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle with subtle noise/glow -->
+  <rect width="400" height="400" fill="#0a0a0a" />
+  <circle cx="200" cy="200" r="180" fill="url(#avatarGlow)" stroke="#333" stroke-width="1" />
+  
+  <!-- Minimalist Geometric / ASCII-inspired Silhouette -->
+  <g fill="none" stroke="url(#lineGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Subtle Star / Sparkle in Top Corner -->
+    <path d="M 310 70 L 310 90 M 300 80 L 320 80" stroke="#c4a7e7" stroke-width="2" />
+    <circle cx="310" cy="80" r="2" fill="#c4a7e7" />
+    
+    <!-- Head / Face contour -->
+    <path d="M 150 140 C 150 90, 250 90, 250 140 C 250 190, 225 220, 200 225 C 175 220, 150 190, 150 140 Z" fill="#141414" />
+    
+    <!-- Hair / Minimalist line aesthetic -->
+    <path d="M 140 135 C 145 75, 255 75, 260 135 C 265 180, 250 200, 240 210" stroke="#888" stroke-width="2" />
+    <path d="M 145 110 C 180 85, 220 85, 255 110" stroke="#fff" stroke-width="1" />
+    
+    <!-- Glasses / Modern minimal frames -->
+    <rect x="160" y="140" width="32" height="22" rx="4" stroke="#fff" stroke-width="1.5" />
+    <rect x="208" y="140" width="32" height="22" rx="4" stroke="#fff" stroke-width="1.5" />
+    <line x1="192" y1="150" x2="208" y2="150" stroke="#fff" stroke-width="1.5" />
+    
+    <!-- Eyes -->
+    <circle cx="176" cy="151" r="2.5" fill="#fff" />
+    <circle cx="224" cy="151" r="2.5" fill="#fff" />
+    
+    <!-- Subtle smile -->
+    <path d="M 188 185 Q 200 195 212 185" stroke="#ccc" stroke-width="1.5" />
+    
+    <!-- Shoulders & Hoodie / Jacket -->
+    <path d="M 120 330 C 120 260, 160 240, 200 240 C 240 240, 280 260, 280 330" fill="#161616" stroke="#444" stroke-width="2" />
+    <path d="M 170 245 L 185 320 M 230 245 L 215 320" stroke="#333" stroke-width="1.5" />
+    
+    <!-- Lapel pin: Sparkle -->
+    <circle cx="175" cy="275" r="4" fill="#c4a7e7" />
+  </g>
+  
+  <!-- Subtle tech overlay text -->
+  <text x="200" y="370" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#777" letter-spacing="2">
+    CS · DAR AL-HEKMA
+  </text>
+</svg>

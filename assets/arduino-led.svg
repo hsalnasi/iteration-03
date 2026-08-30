@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="circBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f0d" />
+      <stop offset="100%" stop-color="#050807" />
+    </linearGradient>
+    <radialGradient id="ledGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0.9" />
+      <stop offset="30%" stop-color="#ef4444" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#circBg)" stroke="#1a2e26" stroke-width="1.5" />
+  
+  <!-- Breadboard Canvas -->
+  <g transform="translate(40, 50)">
+    <!-- White Breadboard Body -->
+    <rect x="0" y="0" width="520" height="300" rx="8" fill="#18191c" stroke="#333" stroke-width="1.5" />
+    
+    <!-- Power rails -->
+    <line x1="20" y1="20" x2="500" y2="20" stroke="#ef4444" stroke-width="1.5" stroke-opacity="0.6" />
+    <line x1="20" y1="35" x2="500" y2="35" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.6" />
+    
+    <!-- Pin grid dots -->
+    <g fill="#2d2e35">
+      <!-- Top strip -->
+      <circle cx="60" cy="70" r="2.5"/><circle cx="80" cy="70" r="2.5"/><circle cx="100" cy="70" r="2.5"/><circle cx="120" cy="70" r="2.5"/><circle cx="140" cy="70" r="2.5"/><circle cx="160" cy="70" r="2.5"/><circle cx="180" cy="70" r="2.5"/><circle cx="200" cy="70" r="2.5"/>
+      <circle cx="60" cy="90" r="2.5"/><circle cx="80" cy="90" r="2.5"/><circle cx="100" cy="90" r="2.5"/><circle cx="120" cy="90" r="2.5"/><circle cx="140" cy="90" r="2.5"/><circle cx="160" cy="90" r="2.5"/><circle cx="180" cy="90" r="2.5"/><circle cx="200" cy="90" r="2.5"/>
+      <circle cx="60" cy="110" r="2.5"/><circle cx="80" cy="110" r="2.5"/><circle cx="100" cy="110" r="2.5"/><circle cx="120" cy="110" r="2.5"/><circle cx="140" cy="110" r="2.5"/><circle cx="160" cy="110" r="2.5"/><circle cx="180" cy="110" r="2.5"/><circle cx="200" cy="110" r="2.5"/>
+      <!-- Divider trench -->
+      <line x1="40" y1="130" x2="480" y2="130" stroke="#0e0e10" stroke-width="6" />
+      <!-- Bottom strip -->
+      <circle cx="60" cy="150" r="2.5"/><circle cx="80" cy="150" r="2.5"/><circle cx="100" cy="150" r="2.5"/><circle cx="120" cy="150" r="2.5"/><circle cx="140" cy="150" r="2.5"/><circle cx="160" cy="150" r="2.5"/><circle cx="180" cy="150" r="2.5"/><circle cx="200" cy="150" r="2.5"/>
+      <circle cx="60" cy="170" r="2.5"/><circle cx="80" cy="170" r="2.5"/><circle cx="100" cy="170" r="2.5"/><circle cx="120" cy="170" r="2.5"/><circle cx="140" cy="170" r="2.5"/><circle cx="160" cy="170" r="2.5"/><circle cx="180" cy="170" r="2.5"/><circle cx="200" cy="170" r="2.5"/>
+    </g>
+
+    <!-- 220 Ohm Resistor -->
+    <g transform="translate(100, 85)">
+      <line x1="-20" y1="5" x2="60" y2="5" stroke="#ccc" stroke-width="2" />
+      <rect x="0" y="-3" width="40" height="16" rx="3" fill="#d4b483" stroke="#8c734b" />
+      <!-- Color bands: Red, Red, Brown, Gold -->
+      <rect x="6" y="-3" width="4" height="16" fill="#ef4444" />
+      <rect x="14" y="-3" width="4" height="16" fill="#ef4444" />
+      <rect x="22" y="-3" width="4" height="16" fill="#78350f" />
+      <rect x="30" y="-3" width="4" height="16" fill="#eab308" />
+    </g>
+
+    <!-- LED Component with Glow -->
+    <g transform="translate(180, 90)">
+      <!-- Glow Aura -->
+      <circle cx="10" cy="0" r="45" fill="url(#ledGlow)" />
+      <!-- Legs -->
+      <path d="M 5 10 L 5 60" stroke="#bbb" stroke-width="2" />
+      <path d="M 15 10 L 15 60" stroke="#bbb" stroke-width="2" />
+      <!-- LED Dome Bulb -->
+      <path d="M 0 0 C 0 -18, 20 -18, 20 0 Z" fill="#ef4444" stroke="#ff8888" stroke-width="1.5" />
+      <ellipse cx="10" cy="2" rx="11" ry="3" fill="#dc2626" />
+    </g>
+
+    <!-- Jumper Wires -->
+    <!-- Red 5V Wire -->
+    <path d="M 80 90 C 40 40, 20 20, 20 20" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" />
+    <!-- Blue GND Wire -->
+    <path d="M 195 150 C 230 180, 260 200, 300 220" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Arduino Board Mockup on right side -->
+    <g transform="translate(300, 50)">
+      <rect x="0" y="0" width="180" height="200" rx="6" fill="#008184" stroke="#005d5f" stroke-width="2" />
+      <text x="90" y="30" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" fill="#fff">ARDUINO UNO</text>
+      <!-- USB Port -->
+      <rect x="-10" y="50" width="25" height="35" rx="2" fill="#silver" stroke="#555" />
+      <!-- ATmega chip -->
+      <rect x="40" y="80" width="100" height="40" rx="3" fill="#111" stroke="#333" />
+      <text x="90" y="105" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#888">ATmega328P</text>
+      <!-- Pin headers -->
+      <rect x="10" y="170" width="160" height="15" fill="#1f2937" />
+    </g>
+
+    <!-- Note Label -->
+    <g transform="translate(30, 240)">
+      <rect x="0" y="0" width="460" height="40" rx="4" fill="#090a0d" stroke="#25262c" />
+      <text x="16" y="24" font-family="'JetBrains Mono', monospace" font-size="10" fill="#a3e635">
+        &gt; Day 1 Experiment: 5V LED blink loop — Hardware + Edge AI baseline
+      </text>
+    </g>
+  </g>
+</svg>
